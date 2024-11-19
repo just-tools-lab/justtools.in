@@ -1,0 +1,48 @@
+/* Root container */
+.container {
+    width: 95vw;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+    box-sizing: border-box;
+    /* padding: 1rem; */
+}
+
+/* Horizontal display (default) */
+.horizontal {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Vertical display */
+.vertical {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+/* Child elements */
+.container > div {
+    flex: 1;
+    /* padding: 0.5rem; */
+}
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        width: 90vw;
+        padding: 0.5rem;
+    }
+
+    .container > div {
+        flex: none;
+        width: 100%;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+}

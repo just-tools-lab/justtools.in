@@ -1,13 +1,25 @@
+import { listItem } from "@/interface/interface";
+import List from "@/ui/reusable/list/List";
+import style from './style.module.css'; 
+
 const Navbar : React.FC = () => {
+
+    const navLinks: listItem[] = [
+        {
+            text: "about"
+        }, 
+        {
+            text: "contact us"
+        }, 
+        {
+            text: "templates"
+        }
+    ]
+
     return (
-        <div>
-            <ul>
-                <li>Tools</li>
-                <li>Templates</li>
-                <li>Community</li>
-                <li>Newsletter</li>
-                <li>About</li>
-            </ul>
+        <div className={style.navbar}>
+            <List items={navLinks} display="horizontal">
+            </List>
         </div>
     )
 }; 

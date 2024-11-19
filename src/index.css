@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 /* ... */
+* {
+  width: 100%;
+}
 
 @layer base {
   :root {

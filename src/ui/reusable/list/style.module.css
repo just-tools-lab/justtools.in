@@ -1,0 +1,29 @@
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 100%;
+}
+
+.list.vertical {
+    flex-direction: column;
+}
+
+.list.horizontal {
+    flex-direction: row;
+}
+
+.listItem {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    max-width: fit-content;
+}
+
+.icon {
+    font-size: 1.2em;
+}
+
+.text {
+    font-size: 1em;
+}
