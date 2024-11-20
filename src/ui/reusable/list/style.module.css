@@ -1,7 +1,7 @@
 .list {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 5rem;
     max-width: 100%;
 }
 
@@ -18,12 +18,42 @@
     align-items: center;
     gap: 5px;
     max-width: fit-content;
+    padding: 3px;
+    position: relative;
 }
 
+.listItem::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0; 
+    height: 2px;
+    background: #4a4a4a;
+    transition: width 0.3s ease;
+}
+
+.listItem:hover::after {
+    width: 100%; 
+}
+
+
 .icon {
-    font-size: 1.2em;
+    font-size: .5em;
+    width: 3rem;
 }
 
 .text {
     font-size: 1em;
+    line-height: 10px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .icon {
+        width: 3rem;
+    }
+    .list {
+        gap: 1rem;
+    }
 }

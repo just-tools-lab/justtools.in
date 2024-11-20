@@ -3,7 +3,8 @@ import React from "react"
 // @/ui/reusable/list/List.tsx | 
 interface listItem {
     icon?: string | React.ReactNode,
-    text: string
+    text: string,
+    link?: string
 }; 
 
 interface listProps {

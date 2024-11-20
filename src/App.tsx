@@ -9,6 +9,11 @@ import justSearchhero from '@/assets/justSearch.svg';
 import justEngineeringLogo from './assets/justEngineeringLogo.svg';
 import justSearchLogo from '@/assets/justSearch_logo.svg';
 import { MoreHorizontal } from 'lucide-react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import About from '@/ui/sections/about/About';
+import Community from '@/ui/sections/community/Community';
+import Templates from '@/ui/sections/templates/Templates'; 
+// import List from '@/ui/reusable/list/List';
 
 
 function App() {
@@ -26,7 +31,7 @@ function App() {
         title: "Just Engineering",
         description: "Curated list of top software company engineering blogs.",
         buttons: [
-            { icon: <MoreHorizontal/>, text: "more", link: "https://example.com/details-1" },
+            { icon: <MoreHorizontal/>, text: "more", link: "" },
         ]
     },
 ];
@@ -39,22 +44,47 @@ const AlternativeProducts: productContent[] = [
     title: "Just Search1.0",
     description: <span>Bulk search your favourite category of websites with a single query.<br></br> And organize it without a hassle.</span>,
     buttons: [
-        { icon:<MoreHorizontal/> , text: "more", link: "https://example.com/details-1" },
+        { icon:<MoreHorizontal/> , text: "more", link: "" },
     ]
   },
 
-]
+];
+
+// const socialLinks: listItem[] = [
+//   {
+//     text: "Just Tools",
+//   }
+// ]; 
+
+const containerContent = [
+  <Navbar />,
+  <Product productContent={products} direction="row" />,
+  <Product productContent={AlternativeProducts} direction="row-reverse" />,
+];
 
   return (
     <div>
-      
-      <Container containerContent={
-        [
-          <Navbar />,
-          <Product productContent={products} direction='row'/>,
-          <Product productContent={AlternativeProducts} direction='row-reverse'/>
-        ]
-      } display='vertical' />
+      <Routes>
+        {/* Default Route for Home */}
+        <Route
+          path="/"
+          element={
+            <Container containerContent={containerContent} display="vertical" />
+          }
+        />
+        <Route
+          path="/home"
+          element={
+            <Container containerContent={containerContent} display="vertical" />
+          }
+        />
+        {/* Other Routes */}
+        <Route path="/about" element={<About />} />
+        <Route path="/community" element={<Community />} />
+        <Route path="/templates" element={<Templates />} />
+        {/* Fallback Redirect to Home */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
     </div>
   )
 }
