@@ -2,7 +2,9 @@ import style from './style.module.css';
 
 const Templates: React.FC = () => {
     return (
-        <div></div>
+        <div className={style.templates}>
+
+        </div>
     ); 
 }; 
 
